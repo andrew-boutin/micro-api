@@ -51,12 +51,7 @@ you to easily access them.
 
 ## TODO
 
-- get rid of duplicated init script copying (yml and dockerfile)
 - makefile: tear down stack, build gradle, build postgres, build rest api, docker stack
-- Git repo
-- Get working using postgres/Dockerfile
-- Get auto db generation working from .sql script
-- Get working with rest api in compose as well.
 - Verify attributes in properties file are actually needed.
 - Do we really need /tmp in rest api container?
 - Upgrade container to Java 9 and gradle file
