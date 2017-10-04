@@ -1,0 +1,24 @@
+version: '3'
+networks:
+  micro-network:
+    external:
+      name: micro-network
+services:
+  api:
+    image: bbs/rest_api
+    ports:
+      - 8080:8080
+    networks:
+      - micro-network
+  db:
+    image: bbs/db
+    ports:
+      - 8081:5432
+    networks:
+      - micro-network
+    volumes:
+      - ./postgres:/docker-entrypoint-initdb.d"
+    environment:
+      - POSTGRES_USER=test
+      - POSTGRES_PASSWORD=test
+      - POSTGRES_DB=test_db
