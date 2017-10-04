@@ -54,7 +54,6 @@ you to easily access them.
 - get rid of duplicated init script copying (yml and dockerfile)
 - makefile: tear down stack, build gradle, build postgres, build rest api, docker stack
 - Git repo
-- Gitignore duplicated..
 - Get working using postgres/Dockerfile
 - Get auto db generation working from .sql script
 - Get working with rest api in compose as well.
