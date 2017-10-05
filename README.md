@@ -52,8 +52,6 @@ you to easily access them.
 ## TODO
 
 - makefile: tear down stack, build gradle, build postgres, build rest api, docker stack
-- Verify attributes in properties file are actually needed.
 - Do we really need /tmp in rest api container?
 - Upgrade container to Java 9 and gradle file
-- Change to yaml props
 - pgAdmin instructions sub page w/ link on here to there
