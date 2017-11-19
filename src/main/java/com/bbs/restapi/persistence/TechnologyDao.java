@@ -1,5 +1,7 @@
-package com.bbs.restapi;
+package com.bbs.restapi.persistence;
 
+import com.bbs.restapi.domain.Technology;
+import com.bbs.restapi.exception.TechnologyNotFoundException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,12 +14,12 @@ import org.springframework.stereotype.Repository;
 import javax.sql.DataSource;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.HashMap;
 import java.util.List;
 
 /**
  * Created by aboutin on 9/30/17.
  */
+// TODO: Use interface
 @Repository
 public class TechnologyDao {
     private static final Logger logger = LoggerFactory.getLogger(TechnologyDao.class);

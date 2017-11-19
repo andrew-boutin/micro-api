@@ -1,18 +1,25 @@
-package com.bbs.restapi;
+package com.bbs.restapi.domain;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import org.hibernate.validator.constraints.NotBlank;
 
 /**
  * Created by aboutin on 9/30/17.
  */
 public class Technology {
-    // TODO: Validation annotations...
+    // TODO: Make fields final
+    // TODO: Don't expose actual DB id
+    // Adding @JsonProperty allows serialization to work
+    @JsonProperty("id")
     private final int id;
 
-    // TODO: Make final
+    @NotBlank
+    @JsonProperty("title")
     private String title;
 
+    @NotBlank
+    @JsonProperty("link")
     private String link;
 
     // TODO: Look up JsonCreator
@@ -27,25 +34,25 @@ public class Technology {
         this.link = link;
     }
 
-    int getId() {
+    public int getId() {
         return id;
     }
 
-    String getTitle() {
+    public String getTitle() {
         return title;
     }
 
-    String getLink() {
+    public String getLink() {
         return link;
     }
+//
+//    void setTitle(String title) {
+//        this.title = title;
+//    }
+//
+//    void setLink(String link) {
+//        this.link = link;
+//    }
 
-    void setTitle(String title) {
-        this.title = title;
-    }
-
-    void setLink(String link) {
-        this.link = link;
-    }
-
-    // TODO: toString
+    // TODO: toString, equals, hashCode
 }

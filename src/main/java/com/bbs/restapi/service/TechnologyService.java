@@ -1,5 +1,8 @@
-package com.bbs.restapi;
+package com.bbs.restapi.service;
 
+import com.bbs.restapi.domain.Technology;
+import com.bbs.restapi.persistence.TechnologyDao;
+import com.bbs.restapi.exception.TechnologyNotFoundException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,6 +13,7 @@ import java.util.List;
 /**
  * Created by aboutin on 9/30/17.
  */
+// TODO: Use interface
 @Service
 public class TechnologyService {
     private static final Logger logger = LoggerFactory.getLogger(TechnologyService.class);
@@ -21,24 +25,23 @@ public class TechnologyService {
         this.technologyDao = technologyDao;
     }
 
-    // TODO: Alphabetical
-    List<Technology> getTechnologies() {
+    public List<Technology> getTechnologies() {
         return technologyDao.getAllTechnologies();
     }
 
-    Technology getTechnology(final int id) {
+    public Technology getTechnology(final int id) {
         return technologyDao.getTechnology(id);
     }
 
-    void createTechnology(final Technology technology) {
+    public void createTechnology(final Technology technology) {
         technologyDao.createTechnology(technology);
     }
 
-    void updateTechnology(final int id, final Technology technology) throws TechnologyNotFoundException {
+    public void updateTechnology(final int id, final Technology technology) throws TechnologyNotFoundException {
         technologyDao.updateTechnology(id, technology);
     }
 
-    void deleteTechnology(final int id) throws TechnologyNotFoundException {
+    public void deleteTechnology(final int id) throws TechnologyNotFoundException {
         technologyDao.deleteTechnology(id);
     }
 }
